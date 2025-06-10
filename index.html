@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamil Nadu Engineering Admissions - Meipuratchi Foundation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #192441;
+            --secondary-color: #f5f5f5;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-text: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background animation */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #192441 25%, transparent 25%, transparent 75%, #192441 75%, #192441),
+                        linear-gradient(45deg, #192441 25%, transparent 25%, transparent 75%, #192441 75%, #192441);
+            background-size: 100px 100px;
+            background-position: 0 0, 50px 50px;
+            opacity: 0.05;
+            z-index: -1;
+            animation: moveBackground 60s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% {
+                background-position: 0 0, 50px 50px;
+            }
+            100% {
+                background-position: 1000px 1000px, 1050px 1050px;
+            }
+        }
+
+        /* Header styles */
+        header {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid var(--light-text);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .logo img:hover {
+            transform: rotate(15deg) scale(1.05);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, #ccc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 70%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--light-text);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), #2c3e50);
+            color: var(--light-text);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+        }
+
+        .btn-primary:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--light-text);
+            border: 2px solid var(--light-text);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Student name display */
+        .student-info {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .student-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .student-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Main content sections */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        /* Cutoff section */
+        .cutoff-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .cutoff-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .cutoff-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .cutoff-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .cutoff-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cutoff-link:hover {
+            text-decoration: underline;
+            color: #c0392b;
+        }
+
+        .screenshot-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .screenshot-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Calculator section */
+        .calculator-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .calculator-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .calculator-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(25, 36, 65, 0.1);
+        }
+
+        .calculator-result {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 1.5rem;
+            display: none;
+        }
+
+        .calculator-result h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .calculator-result p {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Colleges sections */
+        .colleges-section {
+            margin-bottom: 3rem;
+        }
+
+        .colleges-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-btn {
+            padding: 0.8rem 1.5rem;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--accent-color);
+        }
+
+        .tab-btn:hover:not(.active) {
+            color: var(--primary-color);
+            border-bottom-color: rgba(25, 36, 65, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .college-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .college-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .college-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .college-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .college-card p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        /* PDF section */
+        .pdf-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .pdf-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .pdf-section p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .pdf-container {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            background-color: #f9f9f9;
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        /* Announcement banner */
+        .announcement-banner {
+            background-color: var(--accent-color);
+            color: var(--light-text);
+            padding: 1rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .announcement-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .announcement-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+            animation: scrollText 20s linear infinite;
+            white-space: nowrap;
+            display: inline-block;
+            padding-left: 100%;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Contact section */
+        .contact-section {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        .contact-details {
+            margin-top: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+
+        .contact-item a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        ::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 3rem 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid var(--light-text);
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social a {
+            color: var(--light-text);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .header-container {
+                padding: 0 1.5rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav {
+                position: fixed;
+                top: 90px;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary-color);
+                padding: 1rem;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 99;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            nav a {
+                display: block;
+                padding: 0.8rem;
+            }
+
+            .hero {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .calculator-form {
+                grid-template-columns: 1fr;
+            }
+
+            .college-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo img {
+                width: 60px;
+                height: 60px;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+
+            .container {
+                padding: 1.5rem;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="mei_logo.png" alt="Meipuratchi Foundation Logo">
+                <div class="logo-text">
+                    <h1>Meipuratchi Foundation</h1>
+                    <p>Tamil Nadu Engineering Admissions</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#cutoff">Cutoff Marks</a></li>
+                    <li><a href="#calculator">Cutoff Calculator</a></li>
+                    <li><a href="#colleges">Colleges</a></li>
+                    <li><a href="#pdf">Choice Filling</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Gateway to Engineering Education in Tamil Nadu</h2>
+            <p>Comprehensive guidance for engineering admissions through Meipuratchi Foundation</p>
+            <div class="cta-buttons">
+                <a href="#calculator" class="btn btn-primary">Calculate Your Cutoff</a>
+                <a href="#colleges" class="btn btn-secondary">Explore Colleges</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="student-info" id="studentInfo">
+        <!-- Student information will be displayed here -->
+    </div>
+
+    <div class="announcement-banner">
+        <div class="announcement-content">
+            <div class="announcement-text">
+                <strong>Important:</strong> No tuition fee, no hostel fee, and no college bus fee! (Some colleges may collect stationary fee)
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="cutoff" class="cutoff-section">
+            <h3>How to Find Cutoff Marks</h3>
+            <p>Check the official cutoff marks for engineering colleges in Tamil Nadu through the TNEA portal. The cutoff marks are essential for determining your eligibility for various engineering courses.</p>
+            <a href="https://cutoff.tneaonline.org/" class="cutoff-link" target="_blank">Visit Official Cutoff Portal →</a>
+            <div class="screenshot-container">
+                <img src="https://via.placeholder.com/800x450?text=Cutoff+Portal+Screenshot" alt="Cutoff Portal Screenshot">
+            </div>
+            <p>On the cutoff portal, you can search by college, branch, or category to find the exact cutoff marks from previous years. This will help you estimate your chances of admission.</p>
+        </section>
+
+        <section id="calculator" class="calculator-section">
+            <h3>Cutoff Mark Calculator</h3>
+            <p>Calculate your engineering cutoff mark based on your 12th standard Physics, Chemistry, and Mathematics scores.</p>
+            <form id="cutoffCalculator" class="calculator-form">
+                <div class="form-group">
+                    <label for="physics">Physics Mark (out of 100)</label>
+                    <input type="number" id="physics" min="0" max="100" placeholder="Enter Physics mark">
+                </div>
+                <div class="form-group">
+                    <label for="chemistry">Chemistry Mark (out of 100)</label>
+                    <input type="number" id="chemistry" min="0" max="100" placeholder="Enter Chemistry mark">
+                </div>
+                <div class="form-group">
+                    <label for="maths">Mathematics Mark (out of 100)</label>
+                    <input type="number" id="maths" min="0" max="100" placeholder="Enter Mathematics mark">
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate Cutoff</button>
+            </form>
+            <div class="calculator-result" id="calculatorResult">
+                <h4>Your Engineering Cutoff Mark is:</h4>
+                <p id="cutoffResult">0.00</p>
+            </div>
+        </section>
+
+        <section id="colleges" class="colleges-section">
+            <div class="section-title">
+                <h2>Engineering Colleges in Tamil Nadu</h2>
+            </div>
+
+            <div class="colleges-tabs">
+                <button class="tab-btn active" data-tab="all-colleges">All Colleges (A-Z)</button>
+                <button class="tab-btn" data-tab="top-colleges">Top Colleges</button>
+            </div>
+
+            <div class="tab-content active" id="all-colleges">
+                <div class="college-list">
+                    <div class="college-card">
+                        <h4>Anna University, Chennai</h4>
+                        <p>Premier technical university offering various engineering programs with excellent infrastructure and faculty.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>College of Engineering, Guindy</h4>
+                        <p>One of the oldest engineering colleges in India with a rich heritage and strong alumni network.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>PSG College of Technology, Coimbatore</h4>
+                        <p>Renowned for its industry-oriented curriculum and excellent placement opportunities.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Thiagarajar College of Engineering, Madurai</h4>
+                        <p>Known for its research facilities and strong academic programs in engineering.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>National Institute of Technology, Trichy</h4>
+                        <p>Premier institute offering world-class engineering education and research opportunities.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>SRM Institute of Science and Technology, Chennai</h4>
+                        <p>Offers diverse engineering programs with modern infrastructure and global collaborations.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Vellore Institute of Technology, Vellore</h4>
+                        <p>Known for its innovative teaching methods and strong industry connections.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Kumaraguru College of Technology, Coimbatore</h4>
+                        <p>Focuses on holistic development with emphasis on technical and soft skills.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Sri Sivasubramaniya Nadar College of Engineering, Chennai</h4>
+                        <p>Offers quality engineering education with state-of-the-art facilities.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Government College of Technology, Coimbatore</h4>
+                        <p>Autonomous institution known for its academic excellence and research output.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Alagappa College of Technology, Chennai</h4>
+                        <p>Part of Anna University offering specialized engineering programs.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Bannari Amman Institute of Technology, Erode</h4>
+                        <p>Known for its strong industry-academia collaboration and placement record.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content" id="top-colleges">
+                <div class="college-list">
+                    <div class="college-card">
+                        <h4>Anna University, Chennai</h4>
+                        <p>Premier technical university with excellent infrastructure and faculty.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>College of Engineering, Guindy</h4>
+                        <p>One of the oldest and most prestigious engineering colleges in India.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>PSG College of Technology, Coimbatore</h4>
+                        <p>Renowned for industry-oriented curriculum and excellent placements.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>National Institute of Technology, Trichy</h4>
+                        <p>Premier institute with world-class engineering education.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Thiagarajar College of Engineering, Madurai</h4>
+                        <p>Known for strong academic programs and research facilities.</p>
+                    </div>
+                    <div class="college-card">
+                        <h4>Vellore Institute of Technology, Vellore</h4>
+                        <p>Innovative teaching methods with strong industry connections.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pdf" class="pdf-section">
+            <h3>Example of Choice Filling</h3>
+            <p>Download or view the sample PDF to understand how to fill your college and branch preferences during the counseling process.</p>
+            <div class="pdf-container">
+                <iframe src="example_choice_filling.pdf" frameborder="0"></iframe>
+            </div>
+            <p>Make sure to carefully prioritize your choices based on your cutoff marks and preferences.</p>
+        </section>
+
+        <section class="contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Us</h3>
+                    <p>We have provided you with all the essential information about Tamil Nadu Engineering Courses. If you have any further questions or need clarification, our dedicated team is always ready to assist you.</p>
+                    <p>Remember, your dreams are achievable when you stay committed to your path. Trust in your abilities and work diligently towards your goals. We believe in your potential and wish you the very best in your academic and professional journey.</p>
+                    <p class="tamil-quote">"எண்ணிய எண்ணியாங்கு எய்து எண்ணியார் திண்ணியர் ஆகப் பெறின்"<br>(If the determined ones persist, they will achieve what they aspire for)</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a href="mailto:meipuratchi@gmail.com">meipuratchi@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <a href="https://wa.me/919876543210">WhatsApp: +91 98765 43210</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="messageForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+<input type="tel" id="phone" placeholder="Enter your phone number" required>
+</div>
+<div class="form-group">
+    <label for="message">Your Message</label>
+    <textarea id="message" rows="5" placeholder="Type your message here..." required></textarea>
+</div>
+<button type="submit" class="btn btn-primary">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+</div>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 Meipuratchi Foundation. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mainNav = document.getElementById('mainNav');
+
+    mobileMenuBtn.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+    });
+
+    // Cutoff calculator logic
+    const calculatorForm = document.getElementById('cutoffCalculator');
+    const cutoffResult = document.getElementById('cutoffResult');
+
+    calculatorForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const physics = parseFloat(document.getElementById('physics').value) || 0;
+        const chemistry = parseFloat(document.getElementById('chemistry').value) || 0;
+        const maths = parseFloat(document.getElementById('maths').value) || 0;
+
+        if (physics > 100 || chemistry > 100 || maths > 100) {
+            alert("Marks should not exceed 100");
+            return;
+        }
+
+        const cutoff = ((physics / 4) + (chemistry / 4) + (maths / 2)).toFixed(2);
+        cutoffResult.textContent = cutoff;
+    });
+
+    // College tabs switching
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            // Add active to clicked tab and corresponding content
+            button.classList.add('active');
+            const target = button.getAttribute('data-tab');
+            document.getElementById(target).classList.add('active');
+        });
+    });
+
+    // Contact form submit (mock handler)
+    const messageForm = document.getElementById('messageForm');
+    messageForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert("Your message has been sent successfully!");
+        messageForm.reset();
+    });
+</script>
+
+</body>
