@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -865,6 +866,119 @@
                 grid-template-columns: 1fr;
             }
         }
+
+
+
+/* Programming Tips Section Styles */
+.programming-tips-section {
+    background-color: #fff;
+    padding: 3rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 3rem;
+}
+
+.programming-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.tamil-message {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.tamil-message h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tamil-message p {
+    line-height: 1.8;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+.laptop-tip {
+    background-color: #e8f4fd;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    border-left: 4px solid #3498db;
+}
+
+.laptop-tip h3 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.laptop-tip p {
+    line-height: 1.6;
+}
+
+.resources-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.resource-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.resource-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resource-link {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    line-height: 1.6;
+}
+
+.resource-link:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .resources-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tamil-message p, .laptop-tip p {
+        font-size: 1rem;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -873,7 +987,7 @@
             <div class="logo">
                 <img src="mei_logo.png" alt="Meipuratchi Foundation Logo">
                 <div class="logo-text">
-                    <h1> மெய் புரட்சி</h1>
+                    <h1>MeiPuratchi</h1>
                     <p>Tamil Nadu Engineering counselling 2025</p>
                 </div>
             </div>
@@ -886,6 +1000,7 @@
                     <li><a href="#calculator">Cutoff Calculator</a></li>
                     <li><a href="#colleges">Colleges</a></li>
                     <li><a href="#pdf">Choice Filling</a></li>
+                    <li><a href="#Preknowledge"">Preknowledge"</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -910,7 +1025,7 @@
     <div class="announcement-banner">
         <div class="announcement-content">
             <div class="announcement-text">
-                <strong>Important:</strong> No tuition fee, no hostel fee, and no college bus fee! (Some colleges may collect stationary fee)
+                <strong>Important:</strong> No tuition fee, no hostel fee, and no college bus fee! <span style="color: red;">for 7.5% students</span>  (Some colleges may collect stationary fee)
             </div>
         </div>
     </div>
@@ -987,6 +1102,64 @@
             <p>Make sure to carefully prioritize your choices based on your cutoff marks and preferences.</p>
         </section>
 
+
+<!-- Add this section after the PDF section or before the Contact section -->
+<section id="Preknowledge" class="programming-tips-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Programming Tips for Engineering Students</h2>
+        </div>
+        
+        <div class="programming-content">
+            <div class="tamil-message">
+                <h3><i class="fas fa-code"></i> முக்கியமான தகவல்</h3>
+                <p>எந்தவொரு Engineering Department படிச்சாலும் கண்டிப்பாக ஒரு programing language தெரிஞ்சு இருக்கனும்.</p>
+                <p>1st semester ல எல்லா engineering college லயும் எல்லா departments லயும் (CSE முதல் Civil Engineering வரை) C programming அல்லது Python programming தான் சொல்லி தராங்க.</p>
+                <p>நம்ப வீட்டுலயே கடைச்ச நேரத்துல இதுலாம் படிச்சிட்டு போனா 1st semester easy ஆகிடும், மற்றும் ஒரு positive vibe வரும்.</p>
+            </div>
+            
+            <div class="laptop-tip">
+                <h3><i class="fas fa-laptop"></i> Laptop Recommendation</h3>
+                <p>Engineering படிச்சாலே, laptop வாங்கனும். Second-hand கூட வாங்கலாம். இப்பத்திக்கு phone ல practice பண்ணிகலாம்.</p>
+            </div>
+            
+            <div class="resources-container">
+                <div class="resource-card">
+                    <h4><i class="fab fa-google-play"></i> C Programming App</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.kvassyu.coding2.c" target="_blank" class="resource-link">
+                        Learn C Programming on Mobile
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <h4><i class="fab fa-google-play"></i> Python Programming App</h4>
+                    <a href="https://play.google.com/store/apps/details?id=com.kvassyu.coding.py" target="_blank" class="resource-link">
+                        Learn Python on Mobile
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <h4><i class="fab fa-youtube"></i> C Programming YouTube</h4>
+                    <a href="https://youtube.com/playlist?list=PLhP5RsB7fhE3JWGm72JF7KoXbJmhLXlxB&si=oVd5X8Gta99MpNhY" target="_blank" class="resource-link">
+                        C Programming Tutorials
+                    </a>
+                </div>
+                
+                <div class="resource-card">
+                    <h4><i class="fab fa-youtube"></i> Python Programming YouTube</h4>
+                    <a href="https://youtube.com/playlist?list=PLhP5RsB7fhE28lfOcyi9JB31mrBSf4wgL&si=YF6EG5UpXMLXJkh7" target="_blank" class="resource-link">
+                        Python Tutorials
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
         <section class="contact-section" id="contact">
             <div class="contact-container">
                 <div class="contact-info">
@@ -1041,6 +1214,7 @@
                 <a href="#colleges">Colleges</a>
                 <a href="#pdf">Choice Filling</a>
                 <a href="#contact">Contact</a>
+                <a href="#Preknowledge"">Preknowledge"</a>
                 <a href="#">Privacy Policy</a>
             </div>
             <div class="footer-social">
